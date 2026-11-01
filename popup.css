@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+body {
+  width: 280px; margin: 0; padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #ffffff; color: #111827;
+}
+.header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+h1 { font-size: 17px; margin: 0; }
+.sub { margin: 2px 0 0; font-size: 12px; color: #6b7280; }
+.row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border: 1px solid #e5e7eb; border-radius: 12px; background: #f9fafb;
+}
+.label { font-size: 12px; color: #6b7280; }
+.status { font-size: 16px; font-weight: 700; color: #16a34a; }
+.status.off { color: #6b7280; }
+
+.switch { position: relative; width: 46px; height: 26px; display: inline-block; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; inset: 0; background: #d1d5db; border-radius: 26px;
+  cursor: pointer; transition: background .2s;
+}
+.slider::before {
+  content: ""; position: absolute; width: 20px; height: 20px; left: 3px; top: 3px;
+  background: #fff; border-radius: 50%; transition: transform .2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+.switch input:checked + .slider { background: #16a34a; }
+.switch input:checked + .slider::before { transform: translateX(20px); }
+
+.hint { font-size: 12px; color: #6b7280; margin: 10px 2px 0; min-height: 16px; }
+.footer {
+  margin-top: 14px; padding-top: 10px; border-top: 1px solid #e5e7eb;
+  font-size: 12px; color: #6b7280; text-align: center;
+}
+.footer strong { color: #111827; }
+
+
+.social { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+.social a {
+  width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #f3f4f6; color: #374151; transition: background .15s, color .15s, transform .15s;
+}
+.social a svg { width: 16px; height: 16px; fill: currentColor; }
+.social a:hover { color: #fff; transform: translateY(-1px); }
+.social .ig:hover { background: #e1306c; }
+.social .fb:hover { background: #1877f2; }
+.social .x:hover  { background: #000; }
+.social .gh:hover { background: #24292f; }
+
+@media (prefers-color-scheme: dark) {
+  .social a { background: #374151; color: #e5e7eb; }
+  body { background: #1f2937; color: #f3f4f6; }
+  .row { background: #111827; border-color: #374151; }
+  .slider { background: #4b5563; }
+  .footer { border-color: #374151; }
+  .footer strong { color: #f3f4f6; }
+}
+
+.follow { margin-top: 8px; font-size: 11px; color: #6b7280; text-align: center; }

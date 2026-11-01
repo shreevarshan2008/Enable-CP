@@ -1,0 +1,8 @@
+/* Only applies while the extension is ON */
+html:not([data-ecp="off"]) *,
+html:not([data-ecp="off"]) *::before,
+html:not([data-ecp="off"]) *::after {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  -webkit-touch-callout: default !important;
+}
